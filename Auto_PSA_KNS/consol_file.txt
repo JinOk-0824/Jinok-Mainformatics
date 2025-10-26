@@ -1,0 +1,1760 @@
+
+==== 1. Initial Components ====
+Component(
+  ID: GAF_TOP
+  NO: None
+  Name: GAF_TOP
+  Parent IDs: []
+  Child IDs: ['PUMP1', 'PUMP2', 'PUMP3']
+  Type: +
+  Component: 
+  Status: TOP
+  FailType: 
+  Performance: 0.0
+  Description: KNS Example
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: TANK
+  NO: None
+  Name: TANK
+  Parent IDs: ['VALVE']
+  Child IDs: []
+  Type: B
+  Component: tank
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: TANK
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: VALVE
+  NO: None
+  Name: VALVE
+  Parent IDs: ['PUMP1', 'PUMP2', 'PUMP3']
+  Child IDs: ['TANK']
+  Type: B
+  Component: VALVE
+  Status: open
+  FailType: 
+  Performance: 0.0
+  Description: VALVE
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP1
+  NO: None
+  Name: PUMP1
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['VALVE']
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: PUMP1
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: True
+  CCF_re: [<system_class_define.Component object at 0x000001B118E67D90>, <system_class_define.Component object at 0x000001B118E67BD0>]  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP2
+  NO: None
+  Name: PUMP2
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['VALVE']
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: PUMP2
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: True
+  CCF_re: [<system_class_define.Component object at 0x000001B118E67E10>, <system_class_define.Component object at 0x000001B118E67BD0>]  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP3
+  NO: None
+  Name: PUMP3
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['VALVE']
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: PUMP3
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: True
+  CCF_re: [<system_class_define.Component object at 0x000001B118E67E10>, <system_class_define.Component object at 0x000001B118E67D90>]  Exception: False
+)
+------------------------------------------------------------
+
+==== 2. create_basic_event_gates ====
+Component(
+  ID: GAF_TOP
+  NO: None
+  Name: GAF_TOP
+  Parent IDs: []
+  Child IDs: ['GAF_PUMP1', 'GAF_PUMP2', 'GAF_PUMP3']
+  Type: +
+  Component: 
+  Status: TOP
+  FailType: 
+  Performance: 0.0
+  Description: KNS Example
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: TANK
+  NO: None
+  Name: TANK
+  Parent IDs: ['GAF_TANK']
+  Child IDs: []
+  Type: B
+  Component: tank
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: TANK
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: VALVE
+  NO: None
+  Name: VALVE
+  Parent IDs: ['GAF_VALVE']
+  Child IDs: ['GAF_TANK']
+  Type: B
+  Component: VALVE
+  Status: open
+  FailType: 
+  Performance: 0.0
+  Description: VALVE
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP1
+  NO: None
+  Name: PUMP1
+  Parent IDs: ['GAF_PUMP1']
+  Child IDs: ['GAF_VALVE']
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: PUMP1
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: True
+  CCF_re: [<system_class_define.Component object at 0x000001B118E67D90>, <system_class_define.Component object at 0x000001B118E67BD0>]  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP2
+  NO: None
+  Name: PUMP2
+  Parent IDs: ['GAF_PUMP2']
+  Child IDs: ['GAF_VALVE']
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: PUMP2
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: True
+  CCF_re: [<system_class_define.Component object at 0x000001B118E67E10>, <system_class_define.Component object at 0x000001B118E67BD0>]  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP3
+  NO: None
+  Name: PUMP3
+  Parent IDs: ['GAF_PUMP3']
+  Child IDs: ['GAF_VALVE']
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: PUMP3
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: True
+  CCF_re: [<system_class_define.Component object at 0x000001B118E67E10>, <system_class_define.Component object at 0x000001B118E67D90>]  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_TANK
+  NO: None
+  Name: GAF_TANK
+  Parent IDs: ['VALVE']
+  Child IDs: ['TANK']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for TANK
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_VALVE
+  NO: None
+  Name: GAF_VALVE
+  Parent IDs: ['PUMP1', 'PUMP2', 'PUMP3']
+  Child IDs: ['VALVE']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for VALVE
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_PUMP1
+  NO: None
+  Name: GAF_PUMP1
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['PUMP1']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for PUMP1
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_PUMP2
+  NO: None
+  Name: GAF_PUMP2
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['PUMP2']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for PUMP2
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_PUMP3
+  NO: None
+  Name: GAF_PUMP3
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['PUMP3']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for PUMP3
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+
+==== 3. create_parallel_gate_and_update ====
+Component(
+  ID: GAF_TOP
+  NO: None
+  Name: GAF_TOP
+  Parent IDs: []
+  Child IDs: ['GP_GAF_PUMP1_GAF_PUMP2_GAF_PUMP3']
+  Type: +
+  Component: 
+  Status: TOP
+  FailType: 
+  Performance: 0.0
+  Description: KNS Example
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: TANK
+  NO: None
+  Name: TANK
+  Parent IDs: ['GAF_TANK']
+  Child IDs: []
+  Type: B
+  Component: tank
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: TANK
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: VALVE
+  NO: None
+  Name: VALVE
+  Parent IDs: ['GAF_VALVE']
+  Child IDs: ['GAF_TANK']
+  Type: B
+  Component: VALVE
+  Status: open
+  FailType: 
+  Performance: 0.0
+  Description: VALVE
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP1
+  NO: None
+  Name: PUMP1
+  Parent IDs: ['GAF_PUMP1']
+  Child IDs: ['GAF_VALVE']
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: PUMP1
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: True
+  CCF_re: [<system_class_define.Component object at 0x000001B118E67D90>, <system_class_define.Component object at 0x000001B118E67BD0>]  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP2
+  NO: None
+  Name: PUMP2
+  Parent IDs: ['GAF_PUMP2']
+  Child IDs: ['GAF_VALVE']
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: PUMP2
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: True
+  CCF_re: [<system_class_define.Component object at 0x000001B118E67E10>, <system_class_define.Component object at 0x000001B118E67BD0>]  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP3
+  NO: None
+  Name: PUMP3
+  Parent IDs: ['GAF_PUMP3']
+  Child IDs: ['GAF_VALVE']
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: PUMP3
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: True
+  CCF_re: [<system_class_define.Component object at 0x000001B118E67E10>, <system_class_define.Component object at 0x000001B118E67D90>]  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_TANK
+  NO: None
+  Name: GAF_TANK
+  Parent IDs: ['VALVE']
+  Child IDs: ['TANK']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for TANK
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_VALVE
+  NO: None
+  Name: GAF_VALVE
+  Parent IDs: ['PUMP1', 'PUMP2', 'PUMP3']
+  Child IDs: ['VALVE']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for VALVE
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_PUMP1
+  NO: None
+  Name: GAF_PUMP1
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['PUMP1']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for PUMP1
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_PUMP2
+  NO: None
+  Name: GAF_PUMP2
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['PUMP2']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for PUMP2
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_PUMP3
+  NO: None
+  Name: GAF_PUMP3
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['PUMP3']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for PUMP3
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GP_GAF_PUMP1_GAF_PUMP2_GAF_PUMP3
+  NO: None
+  Name: GP_GAF_PUMP1_GAF_PUMP2_GAF_PUMP3
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['GAF_PUMP1', 'GAF_PUMP2', 'GAF_PUMP3']
+  Type: 2
+  Component: 
+  Status: GP
+  FailType: 
+  Performance: 0.0
+  Description: Parallel gate for children of GAF_TOP
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+
+==== 4. create_no_flow_gates ====
+Component(
+  ID: GAF_TOP
+  NO: None
+  Name: GAF_TOP
+  Parent IDs: []
+  Child IDs: ['GP_GAF_PUMP1_GAF_PUMP2_GAF_PUMP3', 'GAF_No_flow_1']
+  Type: +
+  Component: 
+  Status: TOP
+  FailType: 
+  Performance: 0.0
+  Description: KNS Example
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: TANK
+  NO: None
+  Name: TANK
+  Parent IDs: ['GAF_TANK']
+  Child IDs: []
+  Type: B
+  Component: tank
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: TANK
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: VALVE
+  NO: None
+  Name: VALVE
+  Parent IDs: ['GAF_VALVE']
+  Child IDs: []
+  Type: B
+  Component: VALVE
+  Status: open
+  FailType: 
+  Performance: 0.0
+  Description: VALVE
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP1
+  NO: None
+  Name: PUMP1
+  Parent IDs: ['GAF_PUMP1']
+  Child IDs: []
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: PUMP1
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: True
+  CCF_re: [<system_class_define.Component object at 0x000001B118E67D90>, <system_class_define.Component object at 0x000001B118E67BD0>]  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP2
+  NO: None
+  Name: PUMP2
+  Parent IDs: ['GAF_PUMP2']
+  Child IDs: ['GAF_VALVE']
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: PUMP2
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: True
+  CCF_re: [<system_class_define.Component object at 0x000001B118E67E10>, <system_class_define.Component object at 0x000001B118E67BD0>]  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP3
+  NO: None
+  Name: PUMP3
+  Parent IDs: ['GAF_PUMP3']
+  Child IDs: ['GAF_VALVE']
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: PUMP3
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: True
+  CCF_re: [<system_class_define.Component object at 0x000001B118E67E10>, <system_class_define.Component object at 0x000001B118E67D90>]  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_TANK
+  NO: None
+  Name: GAF_TANK
+  Parent IDs: ['GAF_No_flow_2']
+  Child IDs: ['TANK']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for TANK
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_VALVE
+  NO: None
+  Name: GAF_VALVE
+  Parent IDs: ['PUMP2', 'PUMP3', 'GAF_No_flow_1']
+  Child IDs: ['VALVE']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for VALVE
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_PUMP1
+  NO: None
+  Name: GAF_PUMP1
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['PUMP1']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for PUMP1
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_PUMP2
+  NO: None
+  Name: GAF_PUMP2
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['PUMP2']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for PUMP2
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_PUMP3
+  NO: None
+  Name: GAF_PUMP3
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['PUMP3']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for PUMP3
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GP_GAF_PUMP1_GAF_PUMP2_GAF_PUMP3
+  NO: None
+  Name: GP_GAF_PUMP1_GAF_PUMP2_GAF_PUMP3
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['GAF_PUMP1', 'GAF_PUMP2', 'GAF_PUMP3']
+  Type: 2
+  Component: 
+  Status: GP
+  FailType: 
+  Performance: 0.0
+  Description: Parallel gate for children of GAF_TOP
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_No_flow_1
+  NO: None
+  Name: GAF_No_flow_1
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['GAF_VALVE', 'GAF_No_flow_2']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: No Flow Gate 1
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_No_flow_2
+  NO: None
+  Name: GAF_No_flow_2
+  Parent IDs: ['GAF_No_flow_1']
+  Child IDs: ['GAF_TANK']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: No Flow Gate 2
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+
+==== 5. remove_from_b_type_parents ====
+Component(
+  ID: GAF_TOP
+  NO: None
+  Name: GAF_TOP
+  Parent IDs: []
+  Child IDs: ['GP_GAF_PUMP1_GAF_PUMP2_GAF_PUMP3', 'GAF_No_flow_1']
+  Type: +
+  Component: 
+  Status: TOP
+  FailType: 
+  Performance: 0.0
+  Description: KNS Example
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: TANK
+  NO: None
+  Name: TANK
+  Parent IDs: ['GAF_TANK']
+  Child IDs: []
+  Type: B
+  Component: tank
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: TANK
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: VALVE
+  NO: None
+  Name: VALVE
+  Parent IDs: ['GAF_VALVE']
+  Child IDs: []
+  Type: B
+  Component: VALVE
+  Status: open
+  FailType: 
+  Performance: 0.0
+  Description: VALVE
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP1
+  NO: None
+  Name: PUMP1
+  Parent IDs: ['GAF_PUMP1']
+  Child IDs: []
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: PUMP1
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: True
+  CCF_re: [<system_class_define.Component object at 0x000001B118E67D90>, <system_class_define.Component object at 0x000001B118E67BD0>]  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP2
+  NO: None
+  Name: PUMP2
+  Parent IDs: ['GAF_PUMP2']
+  Child IDs: []
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: PUMP2
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: True
+  CCF_re: [<system_class_define.Component object at 0x000001B118E67E10>, <system_class_define.Component object at 0x000001B118E67BD0>]  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP3
+  NO: None
+  Name: PUMP3
+  Parent IDs: ['GAF_PUMP3']
+  Child IDs: []
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: PUMP3
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: True
+  CCF_re: [<system_class_define.Component object at 0x000001B118E67E10>, <system_class_define.Component object at 0x000001B118E67D90>]  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_TANK
+  NO: None
+  Name: GAF_TANK
+  Parent IDs: ['GAF_No_flow_2']
+  Child IDs: ['TANK']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for TANK
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_VALVE
+  NO: None
+  Name: GAF_VALVE
+  Parent IDs: ['PUMP2', 'PUMP3', 'GAF_No_flow_1']
+  Child IDs: ['VALVE']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for VALVE
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_PUMP1
+  NO: None
+  Name: GAF_PUMP1
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['PUMP1']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for PUMP1
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_PUMP2
+  NO: None
+  Name: GAF_PUMP2
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['PUMP2']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for PUMP2
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_PUMP3
+  NO: None
+  Name: GAF_PUMP3
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['PUMP3']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for PUMP3
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GP_GAF_PUMP1_GAF_PUMP2_GAF_PUMP3
+  NO: None
+  Name: GP_GAF_PUMP1_GAF_PUMP2_GAF_PUMP3
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['GAF_PUMP1', 'GAF_PUMP2', 'GAF_PUMP3']
+  Type: 2
+  Component: 
+  Status: GP
+  FailType: 
+  Performance: 0.0
+  Description: Parallel gate for children of GAF_TOP
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_No_flow_1
+  NO: None
+  Name: GAF_No_flow_1
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['GAF_VALVE', 'GAF_No_flow_2']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: No Flow Gate 1
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_No_flow_2
+  NO: None
+  Name: GAF_No_flow_2
+  Parent IDs: ['GAF_No_flow_1']
+  Child IDs: ['GAF_TANK']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: No Flow Gate 2
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+
+==== 6. create_basic_event ====
+Component(
+  ID: GAF_TOP
+  NO: None
+  Name: GAF_TOP
+  Parent IDs: []
+  Child IDs: ['GP_GAF_PUMP1_GAF_PUMP2_GAF_PUMP3', 'GAF_No_flow_1']
+  Type: +
+  Component: 
+  Status: TOP
+  FailType: 
+  Performance: 0.0
+  Description: KNS Example
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: TANK
+  NO: None
+  Name: TANK
+  Parent IDs: ['GAF_TANK']
+  Child IDs: []
+  Type: B
+  Component: tank
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: TANK
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: VALVE
+  NO: None
+  Name: VALVE
+  Parent IDs: ['GAF_VALVE']
+  Child IDs: []
+  Type: B
+  Component: VALVE
+  Status: open
+  FailType: 
+  Performance: 0.0
+  Description: VALVE
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP1
+  NO: None
+  Name: PUMP1
+  Parent IDs: ['GAF_PUMP1']
+  Child IDs: []
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: PUMP1
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: True
+  CCF_re: [<system_class_define.Component object at 0x000001B118E67D90>, <system_class_define.Component object at 0x000001B118E67BD0>]  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP2
+  NO: None
+  Name: PUMP2
+  Parent IDs: ['GAF_PUMP2']
+  Child IDs: []
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: PUMP2
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: True
+  CCF_re: [<system_class_define.Component object at 0x000001B118E67E10>, <system_class_define.Component object at 0x000001B118E67BD0>]  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP3
+  NO: None
+  Name: PUMP3
+  Parent IDs: ['GAF_PUMP3']
+  Child IDs: []
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: PUMP3
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: True
+  CCF_re: [<system_class_define.Component object at 0x000001B118E67E10>, <system_class_define.Component object at 0x000001B118E67D90>]  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_TANK
+  NO: None
+  Name: GAF_TANK
+  Parent IDs: ['GAF_No_flow_2']
+  Child IDs: ['TANK', 'TANK_FTR']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for TANK
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_VALVE
+  NO: None
+  Name: GAF_VALVE
+  Parent IDs: ['PUMP2', 'PUMP3', 'GAF_No_flow_1']
+  Child IDs: ['VALVE', 'VALVE_FTO']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for VALVE
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_PUMP1
+  NO: None
+  Name: GAF_PUMP1
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['PUMP1', 'PUMP1_FTR', 'CCF_PUMP1_PUMP2_PUMP3']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for PUMP1
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_PUMP2
+  NO: None
+  Name: GAF_PUMP2
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['PUMP2', 'PUMP2_FTR', 'CCF_PUMP1_PUMP2_PUMP3']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for PUMP2
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_PUMP3
+  NO: None
+  Name: GAF_PUMP3
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['PUMP3', 'PUMP3_FTR', 'CCF_PUMP1_PUMP2_PUMP3']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for PUMP3
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GP_GAF_PUMP1_GAF_PUMP2_GAF_PUMP3
+  NO: None
+  Name: GP_GAF_PUMP1_GAF_PUMP2_GAF_PUMP3
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['GAF_PUMP1', 'GAF_PUMP2', 'GAF_PUMP3']
+  Type: 2
+  Component: 
+  Status: GP
+  FailType: 
+  Performance: 0.0
+  Description: Parallel gate for children of GAF_TOP
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_No_flow_1
+  NO: None
+  Name: GAF_No_flow_1
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['GAF_VALVE', 'GAF_No_flow_2']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: No Flow Gate 1
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_No_flow_2
+  NO: None
+  Name: GAF_No_flow_2
+  Parent IDs: ['GAF_No_flow_1']
+  Child IDs: ['GAF_TANK']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: No Flow Gate 2
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP1_FTR
+  NO: None
+  Name: PUMP1_FTR
+  Parent IDs: ['GAF_PUMP1']
+  Child IDs: []
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: Cloned from PUMP1
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP2_FTR
+  NO: None
+  Name: PUMP2_FTR
+  Parent IDs: ['GAF_PUMP2']
+  Child IDs: []
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: Cloned from PUMP2
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP3_FTR
+  NO: None
+  Name: PUMP3_FTR
+  Parent IDs: ['GAF_PUMP3']
+  Child IDs: []
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: Cloned from PUMP3
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: VALVE_FTO
+  NO: None
+  Name: VALVE_FTO
+  Parent IDs: ['GAF_VALVE']
+  Child IDs: []
+  Type: B
+  Component: VALVE
+  Status: open
+  FailType: 
+  Performance: 0.0
+  Description: Cloned from VALVE
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: TANK_FTR
+  NO: None
+  Name: TANK_FTR
+  Parent IDs: ['GAF_TANK']
+  Child IDs: []
+  Type: B
+  Component: tank
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Cloned from TANK
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: CCF_PUMP1_PUMP2_PUMP3
+  NO: None
+  Name: CCF_PUMP1_PUMP2_PUMP3
+  Parent IDs: ['GAF_PUMP2', 'GAF_PUMP3', 'GAF_PUMP1']
+  Child IDs: []
+  Type: B
+  Component: CCF
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: CCF Gate for PUMP1, PUMP2, PUMP3
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: []  Exception: False
+)
+------------------------------------------------------------
+
+==== assign_top_priority_numbers ====
+Component(
+  ID: GAF_TOP
+  NO: 1
+  Name: GAF_TOP
+  Parent IDs: []
+  Child IDs: ['GP_GAF_PUMP1_GAF_PUMP2_GAF_PUMP3', 'GAF_No_flow_1']
+  Type: +
+  Component: 
+  Status: TOP
+  FailType: 
+  Performance: 0.0
+  Description: KNS Example
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: TANK
+  NO: 17
+  Name: TANK
+  Parent IDs: ['GAF_TANK']
+  Child IDs: []
+  Type: B
+  Component: tank
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: TANK
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: VALVE
+  NO: 19
+  Name: VALVE
+  Parent IDs: ['GAF_VALVE']
+  Child IDs: []
+  Type: B
+  Component: VALVE
+  Status: open
+  FailType: 
+  Performance: 0.0
+  Description: VALVE
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP1
+  NO: 11
+  Name: PUMP1
+  Parent IDs: ['GAF_PUMP1']
+  Child IDs: []
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: PUMP1
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: True
+  CCF_re: [<system_class_define.Component object at 0x000001B118E67D90>, <system_class_define.Component object at 0x000001B118E67BD0>]  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP2
+  NO: 13
+  Name: PUMP2
+  Parent IDs: ['GAF_PUMP2']
+  Child IDs: []
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: PUMP2
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: True
+  CCF_re: [<system_class_define.Component object at 0x000001B118E67E10>, <system_class_define.Component object at 0x000001B118E67BD0>]  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP3
+  NO: 15
+  Name: PUMP3
+  Parent IDs: ['GAF_PUMP3']
+  Child IDs: []
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: PUMP3
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: True
+  CCF_re: [<system_class_define.Component object at 0x000001B118E67E10>, <system_class_define.Component object at 0x000001B118E67D90>]  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_TANK
+  NO: 9
+  Name: GAF_TANK
+  Parent IDs: ['GAF_No_flow_2']
+  Child IDs: ['TANK', 'TANK_FTR']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for TANK
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_VALVE
+  NO: 10
+  Name: GAF_VALVE
+  Parent IDs: ['PUMP2', 'PUMP3', 'GAF_No_flow_1']
+  Child IDs: ['VALVE', 'VALVE_FTO']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for VALVE
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_PUMP1
+  NO: 6
+  Name: GAF_PUMP1
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['PUMP1', 'PUMP1_FTR', 'CCF_PUMP1_PUMP2_PUMP3']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for PUMP1
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_PUMP2
+  NO: 7
+  Name: GAF_PUMP2
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['PUMP2', 'PUMP2_FTR', 'CCF_PUMP1_PUMP2_PUMP3']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for PUMP2
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_PUMP3
+  NO: 8
+  Name: GAF_PUMP3
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['PUMP3', 'PUMP3_FTR', 'CCF_PUMP1_PUMP2_PUMP3']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Basic event gate for PUMP3
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GP_GAF_PUMP1_GAF_PUMP2_GAF_PUMP3
+  NO: 2
+  Name: GP_GAF_PUMP1_GAF_PUMP2_GAF_PUMP3
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['GAF_PUMP1', 'GAF_PUMP2', 'GAF_PUMP3']
+  Type: 2
+  Component: 
+  Status: GP
+  FailType: 
+  Performance: 0.0
+  Description: Parallel gate for children of GAF_TOP
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_No_flow_1
+  NO: 3
+  Name: GAF_No_flow_1
+  Parent IDs: ['GAF_TOP']
+  Child IDs: ['GAF_VALVE', 'GAF_No_flow_2']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: No Flow Gate 1
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: GAF_No_flow_2
+  NO: 5
+  Name: GAF_No_flow_2
+  Parent IDs: ['GAF_No_flow_1']
+  Child IDs: ['GAF_TANK']
+  Type: +
+  Component: 
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: No Flow Gate 2
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP1_FTR
+  NO: 12
+  Name: PUMP1_FTR
+  Parent IDs: ['GAF_PUMP1']
+  Child IDs: []
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: Cloned from PUMP1
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP2_FTR
+  NO: 14
+  Name: PUMP2_FTR
+  Parent IDs: ['GAF_PUMP2']
+  Child IDs: []
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: Cloned from PUMP2
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: PUMP3_FTR
+  NO: 16
+  Name: PUMP3_FTR
+  Parent IDs: ['GAF_PUMP3']
+  Child IDs: []
+  Type: B
+  Component: pump
+  Status: run
+  FailType: 
+  Performance: 50
+  Description: Cloned from PUMP3
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: VALVE_FTO
+  NO: 20
+  Name: VALVE_FTO
+  Parent IDs: ['GAF_VALVE']
+  Child IDs: []
+  Type: B
+  Component: VALVE
+  Status: open
+  FailType: 
+  Performance: 0.0
+  Description: Cloned from VALVE
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: TANK_FTR
+  NO: 18
+  Name: TANK_FTR
+  Parent IDs: ['GAF_TANK']
+  Child IDs: []
+  Type: B
+  Component: tank
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: Cloned from TANK
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: None  Exception: False
+)
+------------------------------------------------------------
+Component(
+  ID: CCF_PUMP1_PUMP2_PUMP3
+  NO: 4
+  Name: CCF_PUMP1_PUMP2_PUMP3
+  Parent IDs: ['GAF_PUMP2', 'GAF_PUMP3', 'GAF_PUMP1']
+  Child IDs: []
+  Type: B
+  Component: CCF
+  Status: 
+  FailType: 
+  Performance: 0.0
+  Description: CCF Gate for PUMP1, PUMP2, PUMP3
+  Lamda: 0.0
+  Factor: 0.0
+  CCF: False
+  CCF_re: []  Exception: False
+)
+------------------------------------------------------------
